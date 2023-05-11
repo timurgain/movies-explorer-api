@@ -1,7 +1,7 @@
 const router = require('express').Router();
 const jsonParser = require('express').json();
 const routerUsers = require('./users');
-// const routerCards = require('./cards');
+const routerMovies = require('./movies');
 const { login, createUser, logout } = require('../controllers/users');
 const { isAuthenticated } = require('../middlewares/auth');
 const { signupValidation, signinValidation } = require('../middlewares/validation/user');
@@ -14,7 +14,7 @@ router.post('/logout', isAuthenticated, logout);
 
 // main app routes, required to be authenticated
 router.use('/users', isAuthenticated, routerUsers);
-// router.use('/cards', isAuthenticated, routerCards);
+router.use('/movies', isAuthenticated, routerMovies);
 
 // 404, url not found
 router.use('*', (req, res, next) => next(new UrlNotFoundError()));

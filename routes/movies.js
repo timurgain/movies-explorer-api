@@ -1,20 +1,11 @@
 const router = require('express').Router();
 const jsonParser = require('express').json();
-// const {
-//   getUsers,
-//   getUserById,
-//   patchUserMe,
-//   patchUserMeAvatar,
-//   getUserMe,
-// } = require('../controllers/users');
-// const {
-//   userInfoValidation,
-//   avatarValidation,
-//   userIdUrlParamsValidation,
-// } = require('../middlewares/validation/user');
+const { getMovies, postMovie, deleteMovie } = require('../controllers/movies');
+const { movieValidation, movieIdUrlParamsValidation } = require('../middlewares/validation/movie');
 
-router.get('/', () => {});
-router.post('/', () => {});
-router.patch('/me', jsonParser, () => {});
+router.get('/', getMovies);
+router.post('/', jsonParser, movieValidation, postMovie);
+router.delete('/:_id', movieIdUrlParamsValidation, deleteMovie);
+// _id of movie in this api service, not in MoviesExplorer api service
 
 module.exports = router;

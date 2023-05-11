@@ -11,7 +11,7 @@ function isAuthenticated(req, res, next) {
   } catch {
     return next(new AuthenticationRequiredError());
   }
-  req.user = payload;
+  req.user = payload; // req.user = { _id: user._id }
   return next();
 }
 
