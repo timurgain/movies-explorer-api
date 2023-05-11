@@ -4,7 +4,13 @@ const config = {
   },
   db: {
     uri: 'mongodb://localhost:27017/bitfilmsdb',
-  }
+  },
+  jwt: {
+    secretKey: 'dev-secret-key',
+  },
+  regExp: {
+    password: /^[A-Za-z0-9]{4,}$/,
+  },
 };
 
 module.exports = config;

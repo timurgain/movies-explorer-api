@@ -1,6 +1,5 @@
 const mongoose = require('mongoose');
-const { isURL } = require('validator')
-
+const { isURL } = require('validator');
 
 const movieSchema = new mongoose.Schema({
   country: {
@@ -52,8 +51,8 @@ const movieSchema = new mongoose.Schema({
     ref: 'user',
     required: true,
   },
-
-  movieId: {}, // TODO: id фильма, который содержится в ответе сервиса MoviesExplorer. Обязательное поле.
+  // TODO: id фильма, который содержится в ответе сервиса MoviesExplorer. Обязательное поле.
+  movieId: {},
 
   nameRU: {
     type: String,
@@ -65,6 +64,5 @@ const movieSchema = new mongoose.Schema({
   },
   __v: { type: Number, select: false },
 });
-
 
 module.exports = mongoose.model('movie', movieSchema);
