@@ -46,7 +46,7 @@ Content-type: application/json
 {
   "country": "Finland",
   "director": "Тийна Люми",
-  "duration": 118,
+  "duration": "118",
   "year": "2018",
   "description": "Ворчливый старик мечтает умереть, но у внучки на него другие планы. Пронзительная трагикомедия о финской душе",
   "image": "https://avatars.mds.yandex.net/get-kinopoisk-image/4774061/5a54baa4-266a-4eb0-8695-5100f9c7cfc9/1920x",
@@ -64,7 +64,7 @@ Content-type: application/json
 
 ###
 
-DELETE http://127.0.0.1:3000/movies/645d054c293296cda4263e26 HTTP/1.1
+DELETE http://127.0.0.1:3000/movies/645d1762812d4812dec05174 HTTP/1.1
 Content-type: application/json
 
 ###

@@ -18,8 +18,8 @@ const movieSchema = Joi.object().keys({
 });
 
 const cardIdUrlParamsSchema = Joi.object().keys({
-  _id: Joi.string().required().pattern(config.regExp.mongoObjectId)
-})
+  _id: Joi.string().required().pattern(config.regExp.mongoObjectId),
+});
 
 // Validators
 function movieValidation(req, res, next) {
@@ -40,4 +40,4 @@ function movieIdUrlParamsValidation(req, res, next) {
   )(req, res, next);
 }
 
-module.exports = { movieValidation, movieIdUrlParamsValidation }
+module.exports = { movieValidation, movieIdUrlParamsValidation };

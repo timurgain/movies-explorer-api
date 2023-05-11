@@ -1,3 +1,17 @@
+require('dotenv').config();
+
+const { NODE_ENV, JWT_SECRET } = process.env;
+
+const prodOrigins = [
+  '',
+];
+
+const devOrigins = [
+  'http://localhost:3000',
+  'http://localhost:3001',
+  'http://localhost:3002',
+];
+
 const config = {
   app: {
     port: 3000,
@@ -6,7 +20,15 @@ const config = {
     uri: 'mongodb://localhost:27017/bitfilmsdb',
   },
   jwt: {
-    secretKey: 'dev-secret-key',
+    secretKey: NODE_ENV === 'production'
+      ? JWT_SECRET
+      : 'dev-secret-key',
+  },
+  cors: {
+    allowOrigins: NODE_ENV === 'production'
+      ? prodOrigins
+      : devOrigins,
+    allowMethods: ['GET', 'HEAD', 'PUT', 'PATCH', 'POST', 'DELETE'],
   },
   regExp: {
     password: /^[A-Za-z0-9]{4,}$/,
