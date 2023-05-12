@@ -3,13 +3,16 @@ require('dotenv').config();
 const { NODE_ENV, JWT_SECRET } = process.env;
 
 const prodOrigins = [
-  '',
+  'http://movie-tm.nomoredomains.monster',
+  'https://movie-tm.nomoredomains.monster',
 ];
 
 const devOrigins = [
   'http://localhost:3000',
   'http://localhost:3001',
   'http://localhost:3002',
+  'http://movie-tm.nomoredomains.monster',
+  'https://movie-tm.nomoredomains.monster',
 ];
 
 const config = {
