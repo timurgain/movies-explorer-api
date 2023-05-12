@@ -1,6 +1,6 @@
 require('dotenv').config();
 
-const { NODE_ENV, JWT_SECRET } = process.env;
+const { NODE_ENV, JWT_SECRET, DB_URI } = process.env;
 
 const prodOrigins = [
   'http://movie-tm.nomoredomains.monster',
@@ -20,7 +20,9 @@ const config = {
     port: 3000,
   },
   db: {
-    uri: 'mongodb://localhost:27017/bitfilmsdb',
+    uri: NODE_ENV === 'production'
+      ? DB_URI
+      : 'mongodb://127.0.0.1:27017/bitfilmsdb', // 'mongodb://localhost:27017/bitfilmsdb',
   },
   jwt: {
     secretKey: NODE_ENV === 'production'
