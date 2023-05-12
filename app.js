@@ -1,6 +1,8 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const cookieParser = require('cookie-parser');
+const helmet = require('helmet');
+const rateLimiter = require('./middlewares/rateLimiter');
 const { errors } = require('celebrate');
 const config = require('./config');
 const cors = require('./middlewares/cors');
@@ -20,8 +22,14 @@ app.use(requestLogger);
 // parse cookie header and populate req.cookies with an object keyed by the cookie names
 app.use(cookieParser());
 
+// automatically adding or removing HTTP headers to comply with web security standards
+app.use(helmet());
+
 // use cors
 app.use(cors);
+
+// limit the number of requests
+app.use(rateLimiter);
 
 // use routes
 app.use('/api', routes);
