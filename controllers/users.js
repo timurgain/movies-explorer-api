@@ -36,7 +36,7 @@ function getUserMe(req, res, next) {
 }
 
 function patchUserMe(req, res, next) {
-  UserModel.findByIdAndUpdate({ _id: req.user._id }, { name: req.body.name }, {
+  UserModel.findByIdAndUpdate({ _id: req.user._id }, req.body, {
     returnDocument: 'after',
     runValidators: true,
   })

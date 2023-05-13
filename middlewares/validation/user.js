@@ -15,7 +15,7 @@ const signupSchema = Joi.object().keys({
 
 const userInfoSchema = Joi.object().keys({
   name: Joi.string().required().min(2).max(30),
-  email: Joi.string().email({ minDomainSegments: 2 }),
+  email: Joi.string().required().email({ minDomainSegments: 2 }),
 });
 
 // factory func for body validation

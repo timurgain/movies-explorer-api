@@ -15,8 +15,8 @@ POST http://127.0.0.1:3000/api/signin HTTP/1.1
 Content-type: application/json
 
 {
-  "email": "tm2@tm.ru",
-  "password": "2"
+  "email": "tm@tm.ru",
+  "password": "qqqqqqqq"
 }
 
 ###
@@ -35,8 +35,8 @@ PATCH http://127.0.0.1:3000/api/users/me HTTP/1.1
 Content-type: application/json
 
 {
-  "name": "Tom",
-  "email": "tt@tm.ru"
+  "name": "Tm",
+  "email": "tm@tm.ru"
 }
 
 ### ### ###
