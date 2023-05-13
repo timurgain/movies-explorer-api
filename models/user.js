@@ -18,9 +18,9 @@ const userSchema = mongoose.Schema({
   },
   name: {
     type: String,
+    required: true,
     minLength: 2,
     maxLength: 30,
-    default: 'Жак-Ив Кусто',
   },
   __v: { type: Number, select: false },
 });

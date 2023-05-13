@@ -10,11 +10,12 @@ const signinSchema = Joi.object().keys({
 const signupSchema = Joi.object().keys({
   email: Joi.string().required().email({ minDomainSegments: 2 }),
   password: Joi.string().required().pattern(config.regExp.password),
-  name: Joi.string().min(2).max(30),
+  name: Joi.string().required().min(2).max(30),
 });
 
 const userInfoSchema = Joi.object().keys({
   name: Joi.string().required().min(2).max(30),
+  email: Joi.string().email({ minDomainSegments: 2 }),
 });
 
 // factory func for body validation

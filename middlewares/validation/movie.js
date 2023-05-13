@@ -12,7 +12,7 @@ const movieSchema = Joi.object().keys({
   trailerLink: Joi.string().required().uri().pattern(config.regExp.url),
   thumbnail: Joi.string().required().uri().pattern(config.regExp.url),
   // id фильма, который содержится в ответе сервиса MoviesExplorer. Обязательное поле.
-  movieId: Joi.string().required(),
+  movieId: Joi.number().required(),
   nameRU: Joi.string().required(),
   nameEN: Joi.string().required(),
 });

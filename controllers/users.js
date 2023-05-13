@@ -66,7 +66,7 @@ function login(req, res, next) {
     .catch(next);
 }
 
-function logout(req, res, next) {
+function signout(req, res, next) {
   UserModel.findOne({ _id: req.user._id })
     .then((queryObj) => {
       if (!queryObj) throw new NullQueryResultError();
@@ -83,5 +83,5 @@ module.exports = {
   getUserMe,
   patchUserMe,
   login,
-  logout,
+  signout,
 };

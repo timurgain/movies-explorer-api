@@ -36,7 +36,7 @@ const config = {
     allowMethods: ['GET', 'HEAD', 'PUT', 'PATCH', 'POST', 'DELETE'],
   },
   regExp: {
-    password: /^[A-Za-z0-9]{4,}$/,
+    password: /.+/,
     url: /^(ftp|http|https):\/\/[^ "]+#*$/,
     mongoObjectId: /^[0-9a-fA-F]{24}$/,
   },
