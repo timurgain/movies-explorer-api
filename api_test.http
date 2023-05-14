@@ -1,11 +1,126 @@
 ###
 
-GET http://127.0.0.1:3000/ HTTP/1.1
+POST http://127.0.0.1:3000/api/signup HTTP/1.1
+Content-type: application/json
+
+{
+  "email": "tm2@tm.ru",
+  "password": "2",
+  "name": "tm"
+}
+
+###
+
+POST http://127.0.0.1:3000/api/signin HTTP/1.1
+Content-type: application/json
+
+{
+  "email": "tm@tm.ru",
+  "password": "qqqqqqqq"
+}
+
+###
+
+POST http://127.0.0.1:3000/api/signout HTTP/1.1
+Content-type: application/json
+
+### ### ###
+
+GET http://127.0.0.1:3000/api/users/me HTTP/1.1
 Content-type: application/json
 
 ###
 
-GET http://127.0.0.1:3000/ HTTP/1.1
+PATCH http://127.0.0.1:3000/api/users/me HTTP/1.1
+Content-type: application/json
+
+{
+  "name": "Tm",
+  "email": "tm@tm.ru"
+}
+
+### ### ###
+
+POST http://127.0.0.1:3000/movies HTTP/1.1
+Content-type: application/json
+
+{
+  "country": "Finland",
+  "director": "Тийна Люми",
+  "duration": "118",
+  "year": "2018",
+  "description": "Ворчливый старик мечтает умереть, но у внучки на него другие планы. Пронзительная трагикомедия о финской душе",
+  "image": "https://avatars.mds.yandex.net/get-kinopoisk-image/4774061/5a54baa4-266a-4eb0-8695-5100f9c7cfc9/1920x",
+  "trailerLink": "https://www.kinopoisk.ru/film/1042605/",
+  "thumbnail": "https://avatars.mds.yandex.net/get-kinopoisk-image/4774061/5a54baa4-266a-4eb0-8695-5100f9c7cfc9/1920x",
+  "movieId": "12345",
+  "nameRU": "Дед, привет! 2",
+  "nameEN": "Happier Times, Grump"
+}
+
+###
+
+GET http://127.0.0.1:3000/movies HTTP/1.1
+Content-type: application/json
+
+###
+
+DELETE http://127.0.0.1:3000/movies/645d1762812d4812dec05174 HTTP/1.1
+Content-type: application/json
+
+### ### ### CLOUD
+
+GET http://51.250.106.7:3000/users/me HTTP/1.1
+Content-type: application/json
+
+###
+
+GET http://movie-tm.nomoredomains.monster/api/users/me HTTP/1.1
+Content-type: application/json
+
+###
+
+POST https://movie-tm.nomoredomains.monster/api/signup HTTP/1.1
+Content-type: application/json
+
+{
+  "email": "tm@tm.ru",
+  "password": "qqqqqqqq",
+  "name": "tm"
+}
+
+###
+
+POST https://movie-tm.nomoredomains.monster/api/signin HTTP/1.1
+Content-type: application/json
+
+{
+  "email": "tm@tm.ru",
+  "password": "qqqqqqqq"
+}
+
+###
+
+POST https://movie-tm.nomoredomains.monster/api/movies HTTP/1.1
+Content-type: application/json
+
+{
+  "country": "Finland",
+  "director": "Тийна Люми",
+  "duration": "118",
+  "year": "2018",
+  "description": "Ворчливый старик мечтает умереть, но у внучки на него другие планы. Пронзительная трагикомедия о финской душе",
+  "image": "https://avatars.mds.yandex.net/get-kinopoisk-image/4774061/5a54baa4-266a-4eb0-8695-5100f9c7cfc9/1920x",
+  "trailerLink": "https://www.kinopoisk.ru/film/1042605/",
+  "thumbnail": "https://avatars.mds.yandex.net/get-kinopoisk-image/4774061/5a54baa4-266a-4eb0-8695-5100f9c7cfc9/1920x",
+  "movieId": "12345",
+  "nameRU": "Дед, привет! 2",
+  "nameEN": "Happier Times, Grump"
+}
+
+###
+
+GET https://movie-tm.nomoredomains.monster/api/movies HTTP/1.1
 Content-type: application/json
 
 ###
